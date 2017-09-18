@@ -30,7 +30,7 @@
                     Solicitacao de Serviço <span class="caret"></span>
                 </a>
                 <ul class="dropdown-menu"> <!-- linha suspensa -->
-                    <li><a href="#">Nova OS</a></li>
+                    <li><a href="/MyCRM/CarregarListaNovaOS">Nova OS</a></li>
 			  </ul>
             </li>
 			

@@ -51,7 +51,14 @@ public class InserirSolicitacaoServicoServlet extends HttpServlet {
 		
 		SolicitacaoServico os = new SolicitacaoServico(new Integer(0), Integer.parseInt(idCliente), Integer.parseInt(idServico), descricao, dataos);
 		
-		String nextJSP = "index.jsp";
+		try {
+			oscontroller.inserirOS(os);
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String nextJSP = "/cliente/listarClientes.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
         dispatcher.forward(request, response);
 	}

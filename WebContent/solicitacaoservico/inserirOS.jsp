@@ -24,7 +24,7 @@
 		<main class="container">
 		<h1>Dashboard</h1>
 		<hr/>
-			<form action="/MyCRM/InserirClienteServlet" method="post">
+			<form action="/MyCRM/InserirSolicitacaoServicoServlet" method="post">
 			  <div class="form-group">
 			      <label for="campo1">Cliente:</label>
 			      <c:choose>
@@ -50,6 +50,18 @@
 				     </c:when>
 				   </c:choose>
 			  </div>
+			  
+			  <div class="form-group">
+			      <label for="campo3">Descrição:</label>
+			      <input type="text" class="form-control" name="descricao">
+			    </div>
+			   
+			  <div class="form-group">
+			      <label for="campo3">Data OS:</label>
+			      <input type="text" class="form-control" name="dataos">
+			    </div>
+			    
+			    
 			  
 			  <div id="actions" class="row">
 			    <div class="col-md-12">
