@@ -55,7 +55,7 @@ public class CarregarListaNovaOS extends HttpServlet {
 				request.setAttribute("listaServicos", listaservico);
 				
 
-				String nextJSP = "/solicitacaoservico/inserirOS.jsp";
+				String nextJSP = "/inserirOS.jsp";
 		        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
 		        dispatcher.forward(request, response);
 				

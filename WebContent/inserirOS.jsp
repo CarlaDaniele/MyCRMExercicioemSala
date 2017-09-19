@@ -7,18 +7,21 @@
 	   <meta name="description" content="">
 	   <meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	   <link rel="stylesheet" href="/css/bootstrap.min.css">
+	   <link rel="stylesheet" href="css/bootstrap.min.css">
 	   <style>
 	        body {
 	            padding-top: 50px;
 	            padding-bottom: 20px;
 	        }
 	   </style>
-	   <link rel="stylesheet" href="../css/style.css">
+	   <link rel="stylesheet" href="css/style.css">
 	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css">     
     </head>
 	<body>
-		<c:import url="../inc/header.jsp"/>
+	<!-- Assim que abrir o body a primeira coisa é chamar o começo da tela -->
+	
+	
+		<c:import url="/inc/header.jsp"/>
 	
 		<!-- Conteúdo principal da página -->
 		<main class="container">
@@ -29,7 +32,7 @@
 			      <label for="campo1">Cliente:</label>
 			      <c:choose>
 					<c:when test="${not empty listaClientes}">
-						<select name="idCliente" id="idCliente">
+						<select class="form-control" name="idCliente" id="idCliente">
 					     <c:forEach var="cliente" items="${listaClientes}">
 					     	<option value="${cliente.id}">${cliente.nomeCompleto}</option>
 					     </c:forEach>
@@ -42,7 +45,7 @@
 			      <label for="campo1">Serviço:</label>
 			      <c:choose>
 					<c:when test="${not empty listaServicos}">
-						<select name="idServico" id="idServico">
+						<select class="form-control" name="idServico" id="idServico">
 					     <c:forEach var="servico" items="${listaServicos}">
 					     	<option value="${servico.id}">${servico.descricao}</option>
 					     </c:forEach>
@@ -71,6 +74,6 @@
 			  </div>
 			</form>
 		</main>
-		<c:import url="../inc/footer.jsp"/>
+		<c:import url="/inc/footer.jsp"/>
 	</body>
 </html>
