@@ -9,6 +9,7 @@ import java.util.List;
 
 import com.yourcodelab.model.Cliente;
 
+
 /**
  * Classe: ClienteDAO
  * Descrição: realiza a persistência da entidade Cliente
@@ -18,6 +19,7 @@ public class ClienteDAO extends GenericDAO{
 	private PreparedStatement ps;
 	private String SQL_INSERT = "INSERT INTO TBCLIENTE(nomeCompleto, cpf, email, limiteCredito) VALUES (?, ?, ?, ?);";
 	private String SQL_SELECT = "SELECT id, nomeCompleto, cpf, email, limiteCredito FROM TBCLIENTE;";
+	private String SQL_DELETAR = "DELETE FROM TBCLIENTE WHERE ID = ?;";
 	
 	public void inserir(Cliente c){
 		try {
@@ -81,5 +83,19 @@ public class ClienteDAO extends GenericDAO{
 		
 		// Se por acado não houve retorno do banco de dados, retorna
 		return lista;
+	}
+	
+	public void deletarCliente(Integer id)throws ClassNotFoundException, IOException, SQLException{
+		Cliente c = null;
+		//abrir conecxao
+		openConnection();
+	
+		
+		//prepare statement
+		ps = connect.prepareStatement(SQL_DELETAR);
+		ps.setInt(1, id);
+		
+		ps.executeUpdate();
+		closeConnection();
 	}
 }

@@ -1,5 +1,7 @@
 package com.yourcodelab.controller;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.yourcodelab.dao.ClienteDAO;
@@ -15,5 +17,8 @@ public class ClienteController {
 	
 	public List<Cliente> listarTodos(){
 		return dao.listarTodos();
+	}
+	public void deletarCliente(Integer id) throws ClassNotFoundException, IOException, SQLException{
+		dao.deletarCliente(id);
 	}
 }

@@ -61,7 +61,7 @@ public class InserirServicoServlet extends HttpServlet {
 		}
 		
 		
-		String nextJSP = "/cliente/listarClientes.jsp";
+		String nextJSP = "/servico/listarServico.jsp";
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextJSP);
         dispatcher.forward(request, response);
 		

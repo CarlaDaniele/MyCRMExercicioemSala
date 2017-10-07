@@ -36,6 +36,7 @@
                                     <td>Preço</td>
                                     <td>Descrição</td>
                                     <td>Dias Úteis</td>
+                                    <td>Ações</td>
                                 </tr>
                             </thead>
                             <c:forEach var="servico" items="${listaServico}">
@@ -45,6 +46,9 @@
                                     <td>${servico.preco}</td>
                                     <td>${servico.descricao}</td>
                                     <td>${servico.diasUteis}</td>
+                                    <td>                                    
+                                   <a href="/MyCRM/DeletarServicoServlet?id=${servico.id}">Deletar!</a>
+                                    </td>
                                 </tr>
                             </c:forEach>               
                         </table>  

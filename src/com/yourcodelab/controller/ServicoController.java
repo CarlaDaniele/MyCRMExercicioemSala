@@ -18,5 +18,9 @@ public class ServicoController {
 		public List<Servico> listarTodos()throws ClassNotFoundException, IOException, SQLException{
 			return dao.listarTodos();
 		}
+		
+		public void deletarServico(Integer id) throws ClassNotFoundException, IOException, SQLException{
+			dao.deletarServico(id);
+		}
 	
 }

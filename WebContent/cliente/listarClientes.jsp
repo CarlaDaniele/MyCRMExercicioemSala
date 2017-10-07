@@ -36,6 +36,7 @@
                                     <td>CPF</td>
                                     <td>Email</td>
                                     <td>Limite Crédito</td>
+                                    <td>Ação</td>
                                 </tr>
                             </thead>
                             <c:forEach var="cliente" items="${listaClientes}">
@@ -45,6 +46,9 @@
                                     <td>${cliente.cpf}</td>
                                     <td>${cliente.email}</td>
                                     <td>${cliente.limiteCredito}</td>
+                                    <td>
+									<a href="/MyCRM/DeletarClienteServlet?id=${cliente.id}">Deletar!</a>
+									</td>
                                 </tr>
                             </c:forEach>               
                         </table>  

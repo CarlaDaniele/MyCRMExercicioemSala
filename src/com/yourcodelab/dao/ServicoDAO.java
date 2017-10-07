@@ -14,6 +14,7 @@ public class ServicoDAO extends GenericDAO {
 	private PreparedStatement ps;
 	private String SQL_INSERT = "INSERT INTO TBSERVICO(servico, preco, descricao, diasuteis) VALUES (?, ?, ?, ?);";
 	private String SQL_SELECT = "SELECT id, servico, preco, descricao, diasuteis FROM TBSERVICO;";
+	private String SQL_DELET = "DELETE FROM TBSERVICO WHERE ID = ?;";
 	
 	public void inserirServico(Servico s)throws ClassNotFoundException, IOException, SQLException{
 		// Abrir conexão
@@ -56,5 +57,17 @@ public class ServicoDAO extends GenericDAO {
 		return lista;
 		
 	}
+	public void deletarServico(Integer id)throws ClassNotFoundException, IOException, SQLException{
+		Servico s = null;
+		//abrir conecxao
+		openConnection();
+	
 		
+		//prepare statement
+		ps = connect.prepareStatement(SQL_DELET);
+		ps.setInt(1, id);
+		
+		ps.executeUpdate();
+		closeConnection();
+	}
 }
